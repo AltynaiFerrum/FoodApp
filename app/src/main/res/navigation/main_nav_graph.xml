@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragmentOnboarding">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.jyldyzferr.foodapp.presentation.main_screen.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentRecipeDetails"
+            app:destination="@id/fragmentRecipeDetails" />
+    </fragment>
+        <fragment
+            android:id="@+id/fragmentOnboarding"
+            android:name="com.jyldyzferr.foodapp.presentation.onboarding_screen.FragmentOnboarding"
+            android:label="fragment_onboarding"
+            tools:layout="@layout/fragment_onboarding" >
+            <action
+                android:id="@+id/action_fragmentOnboarding_to_fragmentMain"
+                app:destination="@id/fragmentMain" />
+        </fragment>
+    <fragment
+        android:id="@+id/fragmentRecipeDetails"
+        android:name="com.jyldyzferr.foodapp.presentation.recipe_details_screen.FragmentRecipeDetails"
+        android:label="fragment_recipe_details"
+        tools:layout="@layout/fragment_recipe_details" >
+        <argument
+            android:name="recipe"
+            app:argType="com.jyldyzferr.foodapp.domain.models.Recipe" />
+    </fragment>
+
+</navigation>
